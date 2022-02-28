@@ -10,9 +10,10 @@ public class SentenceTransformer {
 
         int counter = 0;
         char[] chars = sentence.toCharArray();
+        char c=chars[chars.length - 1];
         if (!(chars[0] >= 'A' && chars[0] <= 'Z'))
             throw new IllegalArgumentException("Must start with capital letter!");
-        else if (!(chars[chars.length - 1] == '.' || chars[chars.length - 1] == '!' || chars[chars.length - 1] == '?'))
+        else if (!(c == '.' || c == '!' || c == '?'))
             throw new IllegalArgumentException("Must end with . ! or ?");
 
         for (int i = 0; i < chars.length; i++) {
