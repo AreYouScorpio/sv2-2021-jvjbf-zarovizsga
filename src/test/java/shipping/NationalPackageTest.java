@@ -25,4 +25,6 @@ class NationalPackageTest {
         assertEquals(2000,nationalPackage.calculateShippingPrice());
     }
 
+
+ 
 }

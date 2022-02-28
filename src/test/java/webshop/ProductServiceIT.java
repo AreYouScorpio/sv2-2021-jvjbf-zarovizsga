@@ -22,7 +22,7 @@ class ProductServiceIT {
         try {
             dataSource.setUrl("jdbc:mariadb://localhost:3306/exam-test?useUnicode=true");
             dataSource.setUserName("root");
-            dataSource.setPassword("training");
+            dataSource.setPassword("root");
         } catch (SQLException sqle) {
             throw new IllegalStateException("Cannot reach DataBase!", sqle);
         }
@@ -32,7 +32,7 @@ class ProductServiceIT {
         flyway.migrate();
 
         productRepository = new ProductRepository(dataSource);
-        productService = new ProductService(productRepository);
+        // productService = new ProductService(productRepository);
 
     }
 
@@ -52,5 +52,7 @@ class ProductServiceIT {
 
         assertThrows(IllegalArgumentException.class,()->productService.saleProduct(generatedId,21));
     }
+
+
 
 }
