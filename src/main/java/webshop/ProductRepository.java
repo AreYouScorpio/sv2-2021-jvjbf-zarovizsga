@@ -40,6 +40,14 @@ public class ProductRepository {
 
     }
 
+    public Product findProductById(long id){
+
+        return jdbcTemplate.queryForObject("select id,product_name,price,stock where id=?",
+                (rs, rowNum)->new Product(rs.getLong("id"),rs.getString("product_name"),
+                        rs.getLong("price"),rs.getLong("stock")));
+
+    }
+
 
 
 }

@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductTest {
 
-/*
+
     @Test
     void testCreateProduct() {
         Product product = new Product(1L, "Computer", 340_000, 5);
@@ -19,6 +19,6 @@ class ProductTest {
 
 
 
- */
+
 
 }
