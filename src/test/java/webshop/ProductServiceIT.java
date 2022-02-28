@@ -32,11 +32,11 @@ class ProductServiceIT {
         flyway.migrate();
 
         productRepository = new ProductRepository(dataSource);
-        // productService = new ProductService(productRepository);
+        productService = new ProductService(productRepository);
 
     }
 
-/*
+
     @Test
     void testSaleProduct(){
         long generatedId = productRepository.insertProduct("Computer",340_000,20);
@@ -55,6 +55,6 @@ class ProductServiceIT {
 
 
 
- */
+
 
 }

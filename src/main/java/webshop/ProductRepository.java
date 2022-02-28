@@ -18,9 +18,8 @@ public class ProductRepository {
     }
 
 
-
-    public List<String> listEmployeeNames(){
-        return jdbcTemplate.query("select emp_name from employees", (rs,rowNum)->rs.getString("emp_name"));
+    public List<String> listEmployeeNames() {
+        return jdbcTemplate.query("select emp_name from employees", (rs, rowNum) -> rs.getString("emp_name"));
     }
 
     public long insertProduct(String productName, int price, int stock) {
@@ -40,17 +39,17 @@ public class ProductRepository {
 
     }
 
-    public Product findProductById(long id){
+    public Product findProductById(long id) {
 
         return jdbcTemplate.queryForObject("select id,product_name,price,stock from products where id=?",
-                (rs, rowNum)->new Product(rs.getLong("id"),rs.getString("product_name"),
-                        rs.getLong("price"),rs.getLong("stock")),id);
+                (rs, rowNum) -> new Product(rs.getLong("id"), rs.getString("product_name"),
+                        rs.getLong("price"), rs.getLong("stock")), id);
 
     }
 
-    public void updateProductStock(long id, int amount){
+    public void updateProductStock(long id, int amount) {
 
-            jdbcTemplate.update("update products set stock = stock - ? where id = ?", amount, id);
+        jdbcTemplate.update("update products set stock = stock - ? where id = ?", amount, id);
 
     }
 
