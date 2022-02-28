@@ -35,7 +35,7 @@ class ProductRepositoryTest {
         productRepository = new ProductRepository(dataSource);
 
     }
-/*
+
 
     @Test
     void insertAndGetProductByNameTest() {
@@ -61,5 +61,5 @@ class ProductRepositoryTest {
     }
 
 
-     */
+
 }

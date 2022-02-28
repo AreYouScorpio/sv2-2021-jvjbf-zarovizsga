@@ -42,12 +42,16 @@ public class ProductRepository {
 
     public Product findProductById(long id){
 
-        return jdbcTemplate.queryForObject("select id,product_name,price,stock where id=?",
+        return jdbcTemplate.queryForObject("select id,product_name,price,stock from products where id=?",
                 (rs, rowNum)->new Product(rs.getLong("id"),rs.getString("product_name"),
-                        rs.getLong("price"),rs.getLong("stock")));
+                        rs.getLong("price"),rs.getLong("stock")),id);
 
     }
 
+    public void updateProductStock(long id, int amount){
 
+            jdbcTemplate.update("update products set stock = stock - ? where id = ?", amount, id);
+
+    }
 
 }
